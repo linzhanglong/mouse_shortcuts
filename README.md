@@ -4,11 +4,17 @@
 
 快捷键的配置文件：
 $ cat  /etc/mouse_shortcuts.conf 
+
 0:/usr/bin/xed /etc/mouse_shortcuts.conf
+
 1:/opt/teamviewer/tv_bin/TeamViewer
+
 2:/opt/google/chrome/chrome --no-sandbox --url https://wx.qq.com/
+
 3:/opt/google/chrome/chrome --no-sandbox --url https://y.qq.com/
+
 4:/opt/google/chrome/chrome --no-sandbox https://web.kd77.cn/
+
 5:poweroff
 
 
