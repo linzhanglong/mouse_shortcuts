@@ -452,10 +452,10 @@ int enter_daemon(void)
         return -1;
     }
      
-	for(i=0;i< NOFILE;close(i++));
+    for(i=0;i< NOFILE;close(i++));
     umask(0);
-	/* Initialize the log file.	*/
-	//openlog(NULL, LOG_CONS, LOG_DAEMON);
+    /* Initialize the log file.	*/
+    openlog(NULL, LOG_CONS, LOG_DAEMON);
     return 0;
 }
 
@@ -464,18 +464,14 @@ int enter_daemon(void)
 **/
 int main()
 {
-#if 1
+
     /*后台服务*/
     if(enter_daemon() != 0)
     {
         lerror("enter_daemon err");
         return -1;
     }
-#endif
-    close(0);
-    close(1);
-    close(2);
-    openlog(NULL, LOG_CONS, LOG_DAEMON);
+
     /*加载快捷键配置*/
     linfo("load_shortcuts_conf ...\n");
     if(load_shortcuts_conf() < 1)
